@@ -1,0 +1,64 @@
+var express = require('express'),
+  router = express.Router(),
+  mongoose = require('mongoose'),
+  Contact = mongoose.model('Contact');
+
+module.exports = function (app) {
+  app.use('/contacts', router);
+};
+
+router.get('/create', function (req, res, next) {
+	var contact = new Contact();
+	res.render('create',{
+	contact: contact	
+	});
+});
+
+router.post('/create',function(req, res,next){
+	var contact = Contact(req.body);
+	contact.save(
+	function(err,contact){
+	if(err){
+	next(err);
+	return;
+	}
+	res.redirect('/list');
+	});
+	
+});
+
+router.get('/list',function(req,res,next){
+	Contact.find({},function(err,contacts){
+	if(err){
+		next(err);
+		return;
+	}
+	res.render('list', {
+		contacts : contacts
+		});
+});
+});
+
+router.get('/delete/:id',function(req,res,next)
+{	
+	Contact.findOne({_id:mongoose.Types.ObjectId(req.params.id)},function(err,contact)
+  {
+	if(contact)
+	{
+		contact.remove(function(err)
+		{
+			if(err)
+			{
+			next(err);
+			return;
+			}
+			res.redirect('/list');
+		});
+	}
+	else
+	{
+		res.redirect('/list');
+
+	}
+  });
+});

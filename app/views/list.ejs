@@ -1,0 +1,32 @@
+<% include header %>
+<% include navbar %>
+  <h1 align="center"><b>Contact List</b></h1>
+<table class="table table-striped" id="contactsTable">
+	<thead class="thead-inverse">
+	<tr>
+		<th>First Name</th>
+		<th>Middle Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+		<th>Mobile</th>
+		<th>Action</th>
+	</tr>
+	</thread>
+<tbody>
+<%contacts.forEach(function(contact){ %>
+	
+	<tr>
+		<th><%=contact.firstName%></th>
+		<th><%=contact.middleName%></th>
+		<th><%=contact.lastName%></th>
+		<th><%=contact.email%></th>
+		<th><%=contact.mobile%></th>
+		<th><a class="btn btn-primary" href="/contacts/delete-soft/<%=contact._id%>">Delete</a> / 
+		<a class="btn btn-primary" href="/contacts/edit/<%=contact._id%>"> Edit </a></th>
+	</tr>
+	
+<% }); %>
+</tbody>
+</table>
+
+<% include footer %>

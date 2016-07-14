@@ -1,0 +1,11 @@
+var mongoose = require('mongoose'),
+	Schema = mangoose.Schema;
+
+var ContactSchema = new Schema({
+	firstName:{type: String, default:''},
+	lastName:{type: String, default:''},
+	middleName:{type: String, default:''},
+	email:{type: String, default:''},
+	mobile:{type: String, default:''}
+});
+mongoose.model('Contact',ContactSchema);

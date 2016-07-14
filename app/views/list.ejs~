@@ -1,0 +1,26 @@
+<% include header %>
+
+  <h1 align="center">Contact List</h1>
+<table class="table" align="center">
+	<tr>
+		<th>First Name</th>
+		<th>Middle Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+		<th>Mobile</th>
+		<th>Action</th>
+	</tr>
+<%contacts.forEach(function(contact){ %>
+	<tr>
+		<th><%=contact.firstName%></th>
+		<th><%=contact.middleName%></th>
+		<th><%=contact.lastName%></th>
+		<th><%=contact.email%></th>
+		<th><%=contact.mobile%></th>
+		<th><a href="/contact/delete/<%=contact._id%>">Delete</a></th>
+	</tr>
+<% }); %>
+
+</table>
+
+<% include footer %>

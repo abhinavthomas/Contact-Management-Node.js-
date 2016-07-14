@@ -1,0 +1,33 @@
+<% include header %>
+<% include navbar %>
+<h1> <%=title%> Contact</h1>
+	
+  	<form method="post" action="#" class="table">
+	<table class="table">
+	<tr>		
+		<th><label for="firstName">First Name 	:</label></th>
+		<th><input class="form-control" type="text" id="firstName" name="firstName" placeholder="Your First Name" value="<%=contact.firstName%>" required/></th>
+	</tr>
+	<tr>				
+		<th><label for="lastName">Last Name 	:</label></th>
+		<th><input type="text" class="form-control" id="lastName" name="lastName"  placeholder="Your Last Name" value="<%=contact.lastName%>" required/></th> 
+	</tr>
+	<tr>		
+		<th><label for="middleName">Middle Name 	:</label></th>
+		<th><input type="text" id="middleName" class="form-control" name="middleName"  placeholder="Your Middle Name" value="<%=contact.middleName%>" required/></th> 
+	</tr>
+	<tr>		
+		<th><label for="email">Email 	:</label></th>
+		<th><input class="form-control" type="email" id="email" name="email"  placeholder="Your Email ID"value="<%=contact.email%>" required/> </th>
+	</tr>
+	<tr>		
+		<th><label for="firstName">Mobile 	:</label></th>
+		<th><input type="text" class="form-control" id="mobile" name="mobile"  placeholder="Your Mobile Number" value="<%=contact.mobile%>" required/> </th>
+	</tr>
+	<tr>		
+	<th><button class="btn btn-primary btn-lg" type="Submit">Save</button></th>
+	</tr>
+	</table>		
+	</form>  
+
+<% include footer %>

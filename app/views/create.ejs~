@@ -1,0 +1,28 @@
+<% include header %>
+
+  <h1>Contact details</h1>
+	<form method="post" action="#">
+	<div>		
+		<label for="firstName">First Name</label>
+		<input type="text" id="firstName" name="firstName" value="<%=contact.firstName%>" required/>
+		</div>
+	<div>				
+	<label for="lastName">Last Name</label>
+		<input type="text" id="lastName" name="lastName" value="<%=contact.lastName%>" required/> 
+	</div>
+	<div>		
+	<label for="middleName">Middle Name</label>
+		<input type="text" id="middleName" name="middleName" value="<%=contact.middleName%>" required/> 
+	</div>
+	<div>		
+	<label for="email">Email</label>
+		<input type="email" id="email" name="email" value="<%=contact.email%>" required/> 
+	</div>
+	<div>		
+	<label for="firstName">Mobile</label>
+		<input type="text" id="mobile" name="mobile" value="<%=contact.mobile%>" required/> 
+	</div>
+	<div><button type="Submit">Save</button>
+	</form>  
+
+<% include footer %>
